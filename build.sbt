@@ -10,11 +10,9 @@ ThisBuild / scalacOptions ++= Seq(
   "-Ymacro-annotations"
 )
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "blackbox-stats",
-    libraryDependencies ++= distributionDependencies ++ testDependencies.map(_ % Test),
-    testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework")
-  )
+name := "blackbox-stats"
+libraryDependencies ++= distributionDependencies ++ testDependencies.map(_ % Test)
+testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework")
 
 addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
+addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.0" cross CrossVersion.full)

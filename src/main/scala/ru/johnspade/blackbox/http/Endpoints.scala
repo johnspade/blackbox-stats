@@ -1,8 +1,9 @@
-package ru.johnspade.blackbox
+package ru.johnspade.blackbox.http
 
 import cats.syntax.semigroup._
 import derevo.circe.{decoder, encoder}
 import derevo.derive
+import ru.johnspade.blackbox.Stats
 import sttp.tapir.derevo.schema
 import sttp.tapir.json.circe.jsonBody
 import sttp.tapir.ztapir._
